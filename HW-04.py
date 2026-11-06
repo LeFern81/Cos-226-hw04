@@ -5,7 +5,7 @@ def hashFunction(name):
     name = name.strip()
     num = 0
     for char in name:
-        num+=1
+        num+=ord(char)
     return num % 10
     
     
@@ -16,7 +16,7 @@ def titleTable():
     start = time.perf_counter()
     
     with open("MOCK_DATA.csv", mode="r", newline='', encoding="utf-8") as file:
-        length = 2 * sum(1 for line in file)
+        length = sum(1 for line in file)
         table = [None]*length
         
         file.seek(0)
@@ -57,7 +57,7 @@ def quoteTable():
     
     with open("MOCK_DATA.csv", mode="r", newline='', encoding="utf-8") as file:
         
-        length = 2 * sum(1 for line in file)
+        length = sum(1 for line in file)
         table = [None]*length
         
         file.seek(0)
@@ -87,6 +87,6 @@ def quoteTable():
     
 
 
-print("hash key 1:")
+print("hash key 2:")
 titleTable()
 quoteTable()
